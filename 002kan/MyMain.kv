@@ -1,0 +1,88 @@
+<UI>:
+    id : scr_manger
+    Scr_1:
+    Scr_2:
+################ UI หน้า 1 ##################
+<Scr_1>:
+    name:"scr1"
+    canvas.before:
+        Rectangle: 
+            source: "img.jpg"
+            size:root.width,root.height
+            pos:self.pos
+    BoxLayout:
+        orientation:'vertical'
+        Label:
+            text: 'ระบบการอบรมใบอนุญาตขับรถ'
+            font_name : 'tahoma'
+        Button:
+            id: btn_grade
+            text:"เข้าสู่ระบบ"
+            background_color:"#FFFF00"
+            font_name : 'tahoma'
+            size_hint: 0.30,0.15
+            pos_hint:{'center_x':0.38,'center_y':0.5}
+        Button:
+            id: btn_grade
+            text:"ลงทะเบียนใหม่"
+            background_color:"#6600FF"
+            on_press:app.root.current = "scr2"
+            font_name : 'tahoma'
+            size_hint: 0.30,0.15
+            pos_hint:{'center_x':0.38,'center_y':0.5}
+        Button:
+            id: btn_grade
+            text:"For Foreigner"
+            background_color:"#0099FF"
+            font_name : 'tahoma'
+            size_hint: 0.30,0.15
+            pos_hint:{'center_x':0.38,'center_y':0.5}
+
+<Scr_2>:
+    name:"scr2"
+    canvas.before:
+        Rectangle: 
+            source: "img.jpg"
+            size:root.width,root.height
+            pos:self.pos
+    BoxLayout:
+        orientation:'vertical'
+        Label:
+            text: 'ลงทะเบียนเข้ารับการอบรม'
+            font_name : 'tahoma'
+        TextInput:
+            id: txt_card1
+            hint_text:"ระบุเลขบัตรประชาชน"
+            font_name : 'tahoma'
+            size_hint: 0.30,0.15
+            pos_hint:{'center_x':0.5,'center_y':0.5}
+            multiline: False
+        TextInput:
+            id: txt_card2
+            hint_text:"ระบุเลขบัตรประชาชนอีกครั้ง"
+            font_name : 'tahoma'
+            size_hint: 0.30,0.15
+            pos_hint:{'center_x':0.5,'center_y':0.5}
+            multiline: False
+        TextInput:
+            id: txt_phone
+            hint_text:"ระบุเบอร์โทร"
+            font_name : 'tahoma'
+            size_hint: 0.30,0.15
+            pos_hint:{'center_x':0.5,'center_y':0.5}
+            multiline: False
+        TextInput:
+            id: txt_email
+            hint_text:"ระบุอีเมล"
+            font_name : 'tahoma'
+            size_hint: 0.30,0.15
+            pos_hint:{'center_x':0.5,'center_y':0.5}
+            multiline: False
+        Button:
+            id: btn_re
+            text:"ดำเนินการต่อ"
+            background_color:"#0099FF"
+            font_name : 'tahoma'
+            size_hint: 0.30,0.15
+            pos_hint:{'center_x':0.5,'center_y':0.5}
+            on_press: root.add_item()
